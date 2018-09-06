@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WordGuessGame</title>
+      <!-- Added a link to Bootstrap-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+<body>
+
+    <!-- Jumbotron for Title -->
+    <div class="jumbotron">
+        <h1 class="text-center">Video Games</h1>
+        <h3 class="text-center">________________________________________________</h3>
+    </div>
+
+  <!-- Here we create a generic game-options div -->
+  <div id="video-games">
+      <p>word:</p>
+  <br>
+<p>score:</p>
+  </div>
+
+  <script type="text/javascript">
+
+    // Array holds all of the games available
+    var gameList = [
+      "Link: Zelda",
+      "Up Up Down Down: Contra",
+      "Mario and Luigi: SuperMarioBrothers"
+    ];
+
+var score = 0;
+var listIndex = 0;
+
+    // 1. Create code that "grabs" the div with the matching id (#video-games);
+    var gameDiv = document.getElementById("video-games");
+   //targetDiv.innerHTML='<p>hello</p>'
+
+ function renderWord() {
+      // If there are still more questions, render the next one.
+      if (listIndex <= (gameList.length - 1)) {
+        document.querySelector("#video-games").textContent = gameList[listIndex].q;
+
+
+      }
+      // If there aren't, render the end game screen.
+      else {
+       // document.querySelector("#word").textContent = "abc";
+        document.querySelector("#score").textContent = "Final Score: " + score + " out of " + gameList.length;
+      }
+    }
+
+    // Function that updates the score...
+    function updateScore() {
+      document.querySelector("#score").textContent = "Score: " + score;
+    }
+
+function arrayWord() {
+    //var arrayLetter
+
+    
+}
+
+// MAIN PROCESS
+    // ==============================================================================
+
+    // Calling functions to start the game.
+    renderWord();
+   // updateScore();
+
+
+    // 2. Create a for loop that creates HTML content of all the drinks using JavaScript.
+    // HINT: You will need to use each of the following methods: createElement, textContent, appendChild
+    // ...
+
+for( var i = 0; i < gameList.length; i++)
+{
+  var newGameP = document.createElement("p");
+  newGameP.textContent = gameList[i];
+  gameDiv.appendChild(newGameP);
+}
+
+var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"];
+
+
+  </script>
+
+</body>
+</html>
